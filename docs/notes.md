@@ -6,4 +6,8 @@ Build OS
 
 Run QEMU to start OS
 
-```qemu-system-x86_64.exe -drive format=raw,file=boot_floppy.img```
+```qemu-system-x86_64.exe -drive format=raw,file=main_floppy.img```
+
+Run with Bochs
+
+```bochs -f bochs_config```

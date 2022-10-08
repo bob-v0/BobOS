@@ -26,5 +26,5 @@ clean:
 	$(MAKE) -C $(KERNEL) clean
 	$(MAKE) -C $(BIN) clean
 
-image: boot
+image: boot kernel
 	$(MAKE) -C $(BIN)
