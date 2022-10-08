@@ -1,0 +1,24 @@
+
+BIOS interrupts
+
+- https://wiki.osdev.org/BIOS
+- https://en.wikipedia.org/wiki/BIOS_interrupt_call#:~:text=BIOS%20interrupt%20calls%20can%20be,requested%20action%20to%20the%20caller.
+
+
+int 10h ; video
+int 11h ; equipment check
+int 12h ; memory size
+int 13h ; disk IO
+int 14h ; serial communications
+int 15h ; cassette
+int 16h ; keyboard IO
+
+
+BIOS INT 10h
+
+    AH = 00h -- set video mode
+    AH = 01h -- set cursor shape
+    AH = 02h -- set cursor position
+    AH = 03h -- Get cursor position and shape
+    ...
+    AH = 0Eh -- Write character in TTY mode

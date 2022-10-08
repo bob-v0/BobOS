@@ -1,3 +1,6 @@
+# Binaries
+*.img
+*.bin
 
 
 # VS Code
