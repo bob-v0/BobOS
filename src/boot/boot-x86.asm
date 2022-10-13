@@ -90,6 +90,7 @@ main:
 ; In case it gets resumed by an interrupt
 .halt:
     cli                 ; Disable interrupts so the CPU can't get out of halted state
+    hlt
     jmp .halt
 
 
