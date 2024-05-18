@@ -8,9 +8,10 @@ ASFLAGS=-f bin
 
 
 all: $(TARGET_BIN)
-
+	@mkdir -p $(TARGET_DIR)
 
 $(TARGET_BIN):
+	@mkdir -p $(TARGET_DIR)
 	$(AS) *.asm -o $(TARGET_DIR)/$(TARGET_BIN)
 
 clean:

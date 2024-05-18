@@ -67,29 +67,31 @@ puts:
 ; Main function
 ;
 main:
-    
+    cli ; clear interrupts to avoid them messing up while we setup registers
+
     ; setup data segments
-    mov ax, 0       ; can't write directly to ds
+    mov ax, 0               ; can't write directly to ds
     mov ds, ax
     mov es, ax
 
     ; setup stack segment
     mov ss, ax
-    mov sp, 0x7C00  ; stack grows downwards from where we are loaded in memory
+    mov sp, 0x7C00          ; stack grows downwards from where we are loaded in memory
+
+    sti ; Enable interrupts again
 
     ; print hello world
     mov si, msg_hello
     call puts
 
 
-    cli                 ; Disable interrupts so the CPU can't get out of halted state
+    cli                     ; Disable interrupts so the CPU can't get out of halted state
     hlt
-
 
 
 ; In case it gets resumed by an interrupt
 .halt:
-    cli                 ; Disable interrupts so the CPU can't get out of halted state
+    cli                     ; Disable interrupts so the CPU can't get out of halted state
     hlt
     jmp .halt
 

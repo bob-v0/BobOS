@@ -6,12 +6,14 @@ export RM=rm
 export AR=ar
 export AS=nasm
 
-export CFLAGS=-32 -Wall -O -nostdlib -nostdinc -fno-builtin -fno-pie
+export CFLAGS=-m64 -Wall -O -nostdlib -nostdinc -fno-builtin -fno-pie
 
 #LIB=src/lib
 BOOT=src/boot
 KERNEL=src/kernel
 BIN=bin
+
+
 
 all: image
 
@@ -27,4 +29,7 @@ clean:
 	$(MAKE) -C $(BIN) clean
 
 image: boot kernel
+	echo "HEEEELO"
+	mkdir -p $(BIN)/kernel
+	mkdir -p $(BIN)/boot 
 	$(MAKE) -C $(BIN)

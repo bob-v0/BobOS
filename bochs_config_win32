@@ -1,6 +1,6 @@
 megs: 128
-romimage: file=c:\tools\bochs-2.7\BIOS-bochs-latest, address=0xfffe0000
-vgaromimage: file=c:\tools\bochs-2.7\VGABIOS-lgpl-latest
+romimage: file="c:\program files\bochs-2.8\BIOS-bochs-latest", address=0xfffe0000
+vgaromimage: file="c:\program files\bochs-2.8\VGABIOS-lgpl-latest"
 floppya: 1_44=bin/boot/main_floppy.img, status=inserted
 boot: floppy
 mouse: enabled=0
