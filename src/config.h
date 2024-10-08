@@ -1,0 +1,8 @@
+#ifndef __BOBOS_CONFIG_H
+#define __BOBOS_CONFIG_H
+
+#define BOBOS_TOTAL_INTERRUPTS 512
+#define KERNEL_CODE_SELECTOR   0x08
+#define KERNEL_DATA_SELECTOR   0x10
+
+#endif

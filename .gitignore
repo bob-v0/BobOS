@@ -1,3 +1,8 @@
+.git
+.gdbinit
+bin/
+build/
+.idea/
 
 
 # VS Code
