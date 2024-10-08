@@ -1,6 +1,7 @@
 section .asm
 
 global idt_load
+
 idt_load:
     push ebp
     mov ebp, esp

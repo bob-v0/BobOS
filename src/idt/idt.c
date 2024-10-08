@@ -10,8 +10,9 @@ extern void idt_load(struct idtr_desc* ptr);
 
 void idt_zero()
 {
-    term_print_string("Divide by zero error\n");
+    term_print_string("Divide by zero error\n\0");
 }
+
 
 void idt_set(int interrupt_nr, void* address)
 {
@@ -33,5 +34,4 @@ void idt_init()
     idt_set(0, idt_zero);
     idt_load(&idtr_descriptor);
 }
-
 

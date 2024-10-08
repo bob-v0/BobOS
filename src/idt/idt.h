@@ -1,5 +1,5 @@
-#ifndef __BOBOS_H
-#define __BOBOS_H
+#ifndef __BOBOS_IDT_H
+#define __BOBOS_IDT_H
 
 #include <stdint.h>
 

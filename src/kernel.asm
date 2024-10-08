@@ -1,8 +1,7 @@
 [BITS 32]
 
 global _start
-extern kernel_start
-extern problem
+extern kernel_main
 
 CODE_SEG equ 0x08
 DATA_SEG equ 0x10
@@ -23,15 +22,9 @@ _start: ; start of entering 32bit mode
     out 0x92, al
 
 
-    call kernel_start
-
-    call problem
+    call kernel_main
 
     jmp $
-
-problem:
-    mov eax, 0
-    div eax
 
 
 ; make sure asm code aligns properly to prevent issues with C objects
