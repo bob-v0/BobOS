@@ -4,6 +4,7 @@
 #include "kernel.h"
 #include "idt.h"
 #include "io/io.h"
+#include "memory/heap/kheap.h"
 
 void     term_clear();
 uint16_t term_make_char(char c, char color);
@@ -73,6 +74,12 @@ void term_print_string(const char* message)
 
         term_pos_x++;
         p++;
+
+        // Reset for now
+        if (term_pos_y >= VGA_HEIGHT)
+        {
+            term_clear();
+        }
     }
 }
 
@@ -102,10 +109,12 @@ void kernel_main()
     term_putchar(VGA_HEIGHT-1, VGA_WIDTH-1, '*', 15);
 
     term_print_string("Dang it!\0");
+    
+    kheap_init();
 
     idt_init();
 
-    outb(0x60, 0xFF);
+
 
     term_putchar(10, 0, 'A', 5);
 }

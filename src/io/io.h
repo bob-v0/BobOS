@@ -1,11 +1,11 @@
 #ifndef __BOBOS_IO_H
 #define __BOBOS_IO_H
 
-unsigned char insb(unsigned short port);
-unsigned short insw(unsigned short port);
+unsigned char insb(uint16_t port);
+unsigned short insw(uint16_t port);
 
-void outb(unsigned short port, unsigned char data);
-void outw(unsigned short port, unsigned short data);
+void outb(uint16_t port, uint8_t data);
+void outw(uint16_t port, uint8_t data);
 //void outl(unsigned short port, unsigned int data);
 
 #endif
